@@ -3,15 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  // Point of entry
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  // Resove extentions
   resolve: {
     extensions: ['.js'],
   },
+  // Mode
   mode: 'development',
+  // Rules for html css js
   module: {
     rules: [
       {
@@ -35,6 +39,8 @@ module.exports = {
       },
     ],
   },
+
+  // Plugins
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -44,6 +50,8 @@ module.exports = {
       filename: '[name].css',
     }),
   ],
+
+  // Server for webpack-dev-server
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
