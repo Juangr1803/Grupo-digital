@@ -6,8 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[contenthash].js',
-    assetModuleFilename: 'assets/images/[hash][ext][query]',
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.js'],
@@ -39,10 +38,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: './index.[contenthash].html',
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].css',
     }),
   ],
   devServer: {
